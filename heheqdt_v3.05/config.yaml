@@ -1,0 +1,82 @@
+configs:
+  ### Man QDT 230 ###
+  7inch:
+    window_size: { width: 800, height: 480 }
+    frame_video: { x: 50, y: 50, width: 710, height: 350 }
+    elevation_scale: { x: 10, y: 50, width: 40, height: 350 }
+    azimuth_scale: { x: 50, y: 10, width: 710, height: 40 }
+    labels:
+      distance: { x: 70, y: 410, width: 144, height: 30, text: "Khoảng cách" }
+      elevation_angle: { x: 324, y: 410, width: 110, height: 30, text: "Góc Tầm" }
+      azimuth_angle: { x: 534, y: 410, width: 130, height: 30, text: "Góc Hướng" }
+    text_edits:
+      distance: { x: 214, y: 410, width: 80, height: 30 }
+      elevation_angle: { x: 424, y: 410, width: 80, height: 30 }
+      azimuth_angle: { x: 654, y: 410, width: 80, height: 30 }
+    video_widget: { x: 4, y: 4, width: 692, height: 342 }
+    camera:
+      day:
+        rtsp: "rtsp://admin:system123@192.168.100.24:554/Streaming/Channels/1"
+        onvif: { ip: "192.168.100.24", port: 80, username: "admin", password: "system123" }
+      night:
+        rtsp: "rtsp://admin:system123@192.168.100.25:554/ch0/stream0"
+        onvif: { ip: "192.168.100.25", port: 80, username: "admin", password: "system123" }
+      local: 0
+    colors:
+      day: { background: "black", text: "white", label_background: "black", label_text: "white", border: "white" }
+      night: { background: "white", text: "black", label_background: "white", label_text: "black", border: "black" }
+    font_size: 14
+    border_thickness: 3
+    initial_values: { distance: 0, elevation_angle: 45, azimuth_angle: 39 }
+    serial_port: "/dev/ttyTHS0"
+    serial_baudrate: 115200
+    button_gpio_pin_switch: 18
+    button_gpio_pin_zoom_in: 23
+    button_gpio_pin_zoom_out: 24
+    can_interface: "can1"
+    can_bitrate: 500000
+    tcp_address: "192.168.100.20"
+    tcp_port: 12345
+
+  ### Man 10inch QDT WM18 ###
+  10inch:
+    # window_size: { width: 1920, height: 1200 }
+    window_size: { width: 1850, height: 1200 }
+    # frame_video: { x: 70, y: 70, width: 1780, height: 900 }
+    frame_video: { x: 70, y: 70, width: 1660, height: 900 }
+    elevation_scale: { x: 10, y: 70, width: 60, height: 900 }
+    # azimuth_scale: { x: 70, y: 10, width: 1780, height: 60 }
+    azimuth_scale: { x: 70, y: 10, width: 1660, height: 60 }
+    labels:
+      distance: { x: 300, y: 1030, width: 200, height: 40, text: "Khoảng Cách" }
+      elevation_angle: { x: 770, y: 1030, width: 200, height: 40, text: "Góc Tầm" }
+      azimuth_angle: { x: 1220, y: 1030, width: 200, height: 40, text: "Góc Hướng" }
+    text_edits:
+      distance: { x: 500, y: 1030, width: 120, height: 40 }
+      elevation_angle: { x: 970, y: 1030, width: 120, height: 40 }
+      azimuth_angle: { x: 1420, y: 1030, width: 120, height: 40 }
+    # video_widget: { x: 4, y: 4, width: 1772, height: 892 }
+    video_widget: { x: -24, y: 4, width: 1712, height: 892 }
+    camera:
+      day:
+        rtsp: "rtsp://admin:system123@192.168.100.24:554/Streaming/Channels/1"
+        onvif: { ip: "192.168.100.24", username: "admin", password: "system123" }
+      night:
+        rtsp: "rtsp://admin:system123@192.168.100.25:554/ch0/stream0"
+        onvif: { ip: "192.168.100.25", username: "admin", password: "system123" }
+      local: 0
+    colors:
+      day: { background: "#0B1B2B", text: "white", label_background: "black", label_text: "white", border: "white" }
+      night: { background: "white", text: "black", label_background: "white", label_text: "black", border: "black" }
+    font_size: 14
+    border_thickness: 3
+    initial_values: { distance: 0, elevation_angle: 45, azimuth_angle: 39 }
+    serial_port: "/dev/ttyTHS0"
+    serial_baudrate: 115200
+    button_gpio_pin_switch: 18
+    button_gpio_pin_zoom_in: 23
+    button_gpio_pin_zoom_out: 24
+    can_interface: "can1"
+    can_bitrate: 500000
+    tcp_address: "192.168.100.20"
+    tcp_port: 12345
